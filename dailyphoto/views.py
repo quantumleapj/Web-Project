@@ -17,17 +17,23 @@ def index(request):
     """
     dailyphoto 게시물 출력
     """
-    post_list = Post.objects.all()
-
+    # post_list = Post.objects.all()
+    post_list = Post.objects.order_by('-create_date')
     context = {'post_list': post_list}
     return render(request, 'dailyphoto/post_list.html', context)
 
 # post 상세
 def detail(request, post_id):
+    # post_list = Post.objects.all()
+    # post_list = Post.objects.filter(id=post_id) 
+    # post_list = Post.objects.filter(id=request.id) 
+    # print(request.id)
     
-    post  = get_object_or_404(Post, pk=post_id) # 예외일때 404에러 발생
+    post_list  = get_object_or_404(Post, pk=post_id) # 예외일때 404에러 발생
     # get_object_or_404 <- 오류 화면 구성
-    context = { 'post': post}
+    print('인생')
+    print(post_list)
+    context = { 'post_list': post_list}
     return render(request, 'dailyphoto/post_detail.html', context)
 
 # 글 업로드 함수
@@ -60,8 +66,11 @@ def post_create(request):
 #프로필화
 def profile(request, username): # 프로필
     person = get_object_or_404(get_user_model(), username=username)
+    
+    # post_list = Post.objects.all()
+    post_list = Post.objects.filter(id=request.user) 
 
-    return render(request, 'dailyphoto/profile.html', {'person': person})
+    return render(request, 'dailyphoto/profile.html', {'person': person , 'post':post_list})
 
 
 

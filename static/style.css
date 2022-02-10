@@ -29,6 +29,7 @@
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(1.5px);
   -webkit-backdrop-filter: blur(1.5px);
+  /* overflow-y:hidden; */
 }
 
 .modal_window {
@@ -225,21 +226,18 @@ span {
   margin: 30px 300px;
 }
 
-
 .feed_body {
   display: flex;
   justify-content: center;
   padding-top: 40px;
   z-index: 1;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
-
-.feed_sub_body{
+.feed_sub_body {
   display: flex;
   justify-content: center;
   flex-direction: column;
   min-width: 900px;
   border: 2px solid silver;
-
 }

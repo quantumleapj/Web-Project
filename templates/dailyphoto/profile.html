@@ -35,15 +35,17 @@
 <div class = 'feed_body'>
     <div class = 'feed_sub_body'>
         <div style="display: flex; flex-direction:column;">
+            {% for a_post in post %}
+            <span>for</span>
             <div class="feed_photo">
-                <img class="profile_img" src = "#">
+                <img class="profile_img" src = "{{user.post.photo}}">
+                <img class="profile_img" src = "{{user.photo}}">
+                <img class="profile_img" src = "/media/{{user.profile.image}}}">
+                <img class="profile_img" src = "{{a_post.profile.image}}">
+                <img class="profile_img" src = "{{a_post.photo}}">
             </div>
-            <div class="feed_photo">
-                <img class="profile_img" src = "#">
-            </div>
-            <div class="feed_photo">
-                <img class="profile_img" src = "#">
-            </div>
+
+            {% endfor %}
 
         </div>
 
