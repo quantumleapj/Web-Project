@@ -16,16 +16,17 @@
   margin: 0 auto;
 }
 
-
-
-
+/* navbar */
+.top_padding {
+  padding-top: 300px;
+}
 
 /* 메인 화면에 들어갈 css */
 .home_main_body {
   display: flex;
   justify-content: center;
   padding-top: 50px;
-  background-color: #FAFAFA; /* 배경 약간 회색 */
+  background-color: #fafafa; /* 배경 약간 회색 */
 }
 
 .left_body {
@@ -42,9 +43,8 @@
   width: 300px;
   height: 1000px;
   left: 72%;
-  position: fixed
+  position: fixed;
 }
-
 
 /* 피드 */
 .feed_box {
@@ -54,55 +54,50 @@
   min-height: auto;
 }
 
-
-.feed_img{
+.feed_img {
   width: 100%;
   object-fit: contain;
 }
 
-.feed_content{
+.feed_content {
   padding: 0px 10px;
 }
 
-.feed_like{
+.feed_like {
   padding: 0px 10px;
 }
 
-.feed_reply{
+.feed_reply {
   padding: 0px 10px;
   display: flex;
   flex-direction: column;
 }
 
-
-.feed_txt{
+.feed_txt {
   font-size: 14px;
 }
 
-.feed_icon{
+.feed_icon {
   padding: 5px 5px 0px 5px;
   display: flex;
   justify-content: space-between;
-}span{
-   padding-right: 5px;
-  }
-
-
-.avata-sm {
-  width : 20px;
+}
+span {
+  padding-right: 5px;
 }
 
-.feed_name{
+.avata-sm {
+  width: 20px;
+}
+
+.feed_name {
   padding: 10px;
   display: flex;
   align-items: center;
 }
 
-
-
-
 /* 피드 프로필 박스 css*/
-.feed_name_txt{
+.feed_name_txt {
   font-size: 14px;
   padding: 0px 10px;
   font-weight: bold;
@@ -120,15 +115,13 @@
   object-fit: cover;
 }
 
-
-
 /**/
-.name_content{
+.name_content {
   display: flex;
   flex-direction: column;
 }
 
-.name_content_txt{
+.name_content_txt {
   font-size: 12px;
   padding: 0px 10px;
   font-weight: bold;
@@ -146,7 +139,7 @@
   overflow: hidden;
 }
 
-.link_txt{
+.link_txt {
   font-size: 14px;
   font-weight: bold;
   cursor: pointer;
@@ -162,7 +155,7 @@
   align-items: center;
 }
 
-.comment_box{
+.comment_box {
   margin: 40px 0 0 5px;
   font-size: 12px;
   font-weight: bold;
@@ -170,8 +163,6 @@
   display: flex;
   flex-direction: column;
 }
-
-
 
 /* profile_part */
 
@@ -194,22 +185,20 @@
   justify-content: center;
   padding-top: 50px;
   z-index: 1;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
-.sub_body{
+.sub_body {
   display: flex;
   justify-content: center;
   flex-direction: column;
   min-width: 1000px;
   border: 2px solid silver;
-
 }
 
-
-.profile_button{
-  text-align:right;
+.profile_button {
+  text-align: right;
 }
 
-.modify{
+.modify {
   margin: 30px 300px;
 }

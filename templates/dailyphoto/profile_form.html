@@ -1,28 +1,15 @@
+{% extends 'login_base.html' %} {% load bootstrap4 %} {% block content %}
 
-
-
-{% extends 'login_base.html' %}
-
-{% load bootstrap4 %}
-
-
-{% block content %}
-
-<div class = 'modify'>
-    <div style = 'border: 3px solid rgba(0, 0, 0, 0.3); border-radius : 5%; background-color:white;'>
-        <h1 class="text-center">회원정보 변경</h1>
-        <form method="POST" enctype="multipart/form-data">
-
-            {% csrf_token %}
-            {% bootstrap_form user_change_form %}
-            {% bootstrap_form profile_form %}
-
-            {% if dailyphoto.image %}
-                <img src="{{ dailyphoto.image.url }}" alt="" />
-            {% endif %}
-            <button type="submit" class="btn btn-primary">수정</button>
-        </form>
-    </div>
+<div class="modify">
+  <div style="border: 3px solid rgba(0, 0, 0, 0.3); border-radius: 5%; background-color: white">
+    <h1 class="text-center">회원정보 변경</h1>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %} {% bootstrap_form user_change_form %} {% bootstrap_form profile_form %} {% if dailyphoto.image %}
+      <img src="{{ dailyphoto.image.url }}" alt="" />
+      {% endif %}
+      <button type="submit" class="btn btn-primary">수정</button>
+    </form>
+  </div>
 </div>
 
 {% endblock %}

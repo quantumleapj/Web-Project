@@ -16,14 +16,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
   </head>
- 
-  <body >
-    
 
-        {% include 'nav.html' %}
-      {% block content %}{% endblock %}
-
-    
+  <body>
+    {% include 'nav.html' %} {% block content %}{% endblock %}
 
     <!-- jQuery JS -->
     <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
