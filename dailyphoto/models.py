@@ -11,8 +11,7 @@ class Post(models.Model):
     photo = models.ImageField(upload_to="pic/",blank=True)
     create_date = models.DateTimeField()
     modify_date = models.DateTimeField(null=True, blank=True)
-    like_count = models.IntegerField(null=True)
-
+    like_count = models.IntegerField( default=0)
 
     def __str__(self):
         return self.subject

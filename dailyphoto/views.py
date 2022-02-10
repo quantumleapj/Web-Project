@@ -9,6 +9,7 @@ from django.contrib.auth import get_user_model
 from .forms import PostForm, CustomUserChangeForm, ProfileForm
 from .models import Post
 from django.utils import timezone
+from .apps import load_feed_by_time
 
 # from PIL import Image
 
@@ -17,7 +18,11 @@ def index(request):
     """
     dailyphoto 게시물 출력
     """
+    # feed_list=load_feed_by_time()
     post_list = Post.objects.order_by('-create_date')
+    print(post_list)
+    print(type(post_list))
+
 
     context = {'form': post_list}
     return render(request, 'dailyphoto/post_list.html', context)
