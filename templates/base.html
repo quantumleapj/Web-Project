@@ -16,17 +16,17 @@
     <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}" />
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
   </head>
- 
-  <body >
-        {% include 'nav.html' %}
-      {% block content %}{% endblock %}
 
-    
-
+  <body>
+    {% include 'nav.html' %}{% block content %}{% endblock %}{% include 'dailyphoto/upload_page.html' %}
+    <!-- 스크립트블럭 -->
+    {% block script %}
     <!-- jQuery JS -->
     <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
     <!-- Bootstrap JS -->
     <script src="{% static 'bootstrap.min.js' %}"></script>
-    {% block script %}{% endblock %}
+    <!-- 업로드모달 -->
+    <script src="{% static 'modal_upload.js' %}"></script>
+    {% endblock %}
   </body>
 </html>

@@ -1,18 +1,38 @@
-{% block content %}
-<div class="modal_overlay">
+<div class="modal_overlay" id="id_modal_upload">
   <div class="modal_window">
-    <form method="post" class="post-form" enctype="multipart/form-data">
+    <form method="post" class="post-form" enctype="multipart/form-data" id="form_upload">
       {% csrf_token %}
-      <div></div>
-      {{form.as_p}}
-      <a href="{{now_url}}">링크</a>
+      <div class="form-group">
+        <label for="content">글 제목</label>
+        <input
+          type="text"
+          class="form-control"
+          name="title"
+          placeholder="글 제목을 입력하세요."
+          id="id_title"
+          value="{{ form.title.value|default_if_none:'' }}"
+        />
+      </div>
+      <div class="form-group">
+        <label for="content">글 내용 </label>
+        <textarea class="form-control" name="content" id="id_content" rows="10" placeholder="오늘 하루는 무슨 일이 있었나요?">
+  {{ form.content.value|default_if_none:'' }}
 
-      <a href="javascript:history.back()" class="btn btn-primary">닫기</a>
-      <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> 저장하기</button>
+  </textarea
+        >
+      </div>
+      <div>
+        <input type="file" name="photo" accept="image/*" id="id_photo" />
+      </div>
+      <!-- <a href="{{now_url}}">링크</a> -->
+      <!-- <a href="javascript:history.back()" class="btn btn-primary">닫기</a> -->
+      <button onclick="CloseModal()" class="btn btn-primary">닫기</button>
+      <button id="temp" onclick="testfunc()">콘솔</button>
+      <button id="upload">저장하기-ajax</button>
+      <button type="submit" class="btn btn-primary" id="upload"><i class="fas fa-save"></i> 저장하기</button>
     </form>
   </div>
 </div>
 <script>
-  console.log("script 사용 가능?");
+  console.log("upload_page 인클루드 되었습니다. ");
 </script>
-{% endblock %}

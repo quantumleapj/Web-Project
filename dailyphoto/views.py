@@ -32,7 +32,37 @@ def detail(request, post_id):
 
 # 글 업로드 함수
 # @login_required(login_url='common:login')
-def post_create(request): 
+def post_create(request):
+  """
+  upload
+  """
+  print('view함수 호출')
+  print(request)
+
+  if request.method== "POST":
+    print('post upload page - request method is post')
+    form = PostForm(request.POST)
+    if form.is_valid():
+      post = form.save(commit=False)
+      post.photo=request.FILES['photo']
+      post.author= request.user
+      post.create_date=timezone.now()
+      post.save()
+      print('save made?')
+      return redirect('dailyphoto:index')
+    else:
+      print('form is not valid')
+  else:
+    print('post upload page - request method is get')
+    form=PostForm()
+
+  context = {'form': form ,
+  'now_url':request.path
+  }
+  return render(request, 'dailyphoto:index', context )
+
+
+def post_create_111(request): 
   """
   upload
   """
@@ -59,6 +89,9 @@ def post_create(request):
 
     print('request method is not post its get')
     form=PostForm()
+
+  print(form)
+  # print(form.as_p)
 
   context = {'form': form ,
   'now_url':request.path
