@@ -171,8 +171,10 @@ def post_update(request,post_id):
       #저장
       post.save()
       print('post update made')
+      
+      return redirect('dailyphoto:profile', username = request.user.username)
 
-      return redirect('dailyphoto:index')
+
     else:
       print('post update - form is not valid')
     
@@ -201,10 +203,11 @@ def post_delete(request,post_id):
     if form.is_valid():
       print('form is valid -delete')
       post.delete()
+      return redirect('dailyphoto:profile', username = request.user.username)
+
     else:
       print('post delete - form is not valid')
-  return redirect('dailyphoto:index')
-
+      return redirect('dailyphoto:profile', username = request.user.username)
 
 # like
 @login_required(login_url='common:login')
