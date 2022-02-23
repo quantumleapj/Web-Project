@@ -46,10 +46,12 @@
       <div class="detail_content">
         <p style='font-size:25px;'>{{post.content}}</p>
       </div>
+      {% if post.author == request.user %}
       <div class="detail_buttons">
         <a href="{% url 'dailyphoto:post_update' post.id %}"><button id="modify_{{post.id}}" class="btn btn-light" style="border-color: #aaaaaa;" type="submit">수정</button></a>
         <button id="delete_{{post.id}}" class="btn btn-light" style="border-color: #aaaaaa;" type="submit" onclick="if(confirm('삭제하시겠습니까?')){location.href=`{% url 'dailyphoto:post_delete' post.id%}`}">삭제</button>
       </div>
+      {% endif %}
     </div>
   </div>
 </div>
