@@ -20,7 +20,7 @@
 
             </div>
 
-            <div style="display: flex; flex-direction:column; margin: 40px 80px">
+            <div style="display: flex; flex-direction:column; margin: 40px 20px">
                 <div class="mb-3" style="display: flex; flex-direction: column; ">
                     <div style="font-size: 35px; "> {{ person.profile.nickname }} </div>
                     
@@ -35,7 +35,7 @@
                     <div style = 'display: flex; flex-direction: column; '>
                       <div>
                         <div>
-                          팔로잉 : {{ person.followings.all|length }} / 팔로워 : {{ person.followers.all|length }}
+                          내가보는친구 : {{ person.followings.all|length }} / 나를보는친구 : {{ person.followers.all|length }}
                         </div>
   
                         <div>
@@ -44,9 +44,9 @@
                               <form action="{% url 'dailyphoto:follow' person.pk%}" method='POST'>
                                 {% csrf_token %}
                                 {% if user in person.followers.all %}
-                                  <input type="submit" value='팔로우 취소'>
+                                  <input type="submit" value='일기친구 취소'>
                                 {% else %}
-                                  <input type="submit" value='팔로우'>
+                                  <input type="submit" value='친구맺기'>
                                 {% endif %}
                               </form>
                             </div>  

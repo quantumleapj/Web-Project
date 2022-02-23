@@ -388,7 +388,7 @@ div.over {
 .sub_feed_body {
   display: flex;
   flex-direction: row;
-  min-width: 850px;
+  min-width: 800px;
   height: 600px;
   flex-wrap: wrap;
   overflow-y : scroll;
@@ -418,8 +418,6 @@ div.over {
 .searchbutton {
   border:none;
 }
-
-
 
 /* post_detail */
 .postmodal_window {
@@ -460,8 +458,6 @@ div.over {
   bottom:5%;
   right: 5%;
 }
-
-
 
 
 /* 정체불명 */

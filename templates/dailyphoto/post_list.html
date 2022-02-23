@@ -41,7 +41,7 @@
           <!-- icon -->
           {% block icons %} {% include 'dailyphoto/icons.html' %} {% endblock %}
           <hr />
-          <div class="big_feed_content overflow">{{post.content}}</div>
+          <div class="big_feed_content overflow" style="display:block;">{{post.content|linebreaks}}</div>
           <hr />
           <div class="comment_wrap">
             <div class="comment overflow">
