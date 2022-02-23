@@ -81,7 +81,7 @@ def comment_create(request, post_id):
       comment.post = post
       comment.save()
       
-      return redirect(reverse('dailyphoto:index')+"#comment-"+str(comment.id))
+      return redirect(reverse('dailyphoto:')+"#comment-"+str(comment.id))
 
     else:
       return render(request, 'dailyphoto/post_list.html')
@@ -174,7 +174,6 @@ def post_update(request,post_id):
       
       return redirect('dailyphoto:profile', username = request.user.username)
 
-
     else:
       print('post update - form is not valid')
     
@@ -207,7 +206,8 @@ def post_delete(request,post_id):
 
     else:
       print('post delete - form is not valid')
-      return redirect('dailyphoto:profile', username = request.user.username)
+  return redirect('dailyphoto:profile', username = request.user.username)
+
 
 # like
 @login_required(login_url='common:login')
