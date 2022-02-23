@@ -35,7 +35,7 @@
                     <div style = 'display: flex; flex-direction: column; '>
                       <div>
                         <div>
-                          내가보는친구 : {{ person.followings.all|length }} / 나를보는친구 : {{ person.followers.all|length }}
+                          나를 보는 친구 : {{ person.followings.all|length }} / 내가 보는 친구 : {{ person.followers.all|length }}
                         </div>
   
                         <div>
@@ -46,7 +46,11 @@
                                 {% if user in person.followers.all %}
                                   <input type="submit" value='일기친구 취소'>
                                 {% else %}
+<<<<<<< HEAD
                                   <input type="submit" value='친구맺기'>
+=======
+                                  <input type="submit" value='일기친구'>
+>>>>>>> 33d2e9f41a47fb67d5bad2de91991b96121b00ac
                                 {% endif %}
                               </form>
                             </div>  
